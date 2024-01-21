@@ -1,0 +1,19 @@
+# docker-compose.yml
+
+version: "3.7"
+services:
+  validator.db:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: ""
+      POSTGRES_DB: "db name"
+    ports:
+      - 5432:5432
+    volumes:
+      - db:/var/lib/postgresql/data
+
+
+volumes:
+  db:
